@@ -32,7 +32,7 @@ jobs:
           msystem: 'msys'
 
       - name: 'set path for stunnel'
-        run: export PATH=$PATH:/c/Program\ Files\ \(x86\)/stunnel/bin
+        run: echo 'export PATH=$PATH:/c/Program\ Files\ \(x86\)/stunnel/bin' >> .bashrc
         shell: msys2 {0}
       
       - name: 'install stunnel'
