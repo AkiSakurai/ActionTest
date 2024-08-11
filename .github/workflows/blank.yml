@@ -33,6 +33,8 @@ jobs:
 
       - name: 'set path for stunnel'
         run: echo /c/Program\ Files\ \(x86\)/stunnel/bin >> $GITHUB_PATH
+        shell: msys2 {0}
+      
       - name: 'install stunnel'
         run: |
           echo $PATH
