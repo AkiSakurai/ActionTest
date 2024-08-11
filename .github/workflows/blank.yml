@@ -34,5 +34,6 @@ jobs:
       - name: 'install stunnel'
         run: |
           echo $PATH
+          export
           stunnel
         shell: msys2 {0}
