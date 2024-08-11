@@ -28,7 +28,9 @@ jobs:
           choco install -y stunnel --force
           echo %PROGRAMFILES(X86)%\stunnel\bin>>%GITHUB_PATH%
         shell: cmd
-        
+      - uses: msys2/setup-msys2@ddf331adaebd714795f1042345e6ca57bd66cea8 # v2
+        with:
+          msystem: 'msys'
       - name: 'install stunnel'
         run: |
           echo $PATH
