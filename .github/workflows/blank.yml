@@ -33,7 +33,14 @@ jobs:
 
       - name: 'install stunnel'
         run: |
-          export PATH=$PATH:/c/Program\ Files\ \(x86\)/stunnel/bin
+          export PATH="$PATH:/c/Program Files (x86)/stunnel/bin
           echo $PATH
           stunnel
         shell: msys2 {0}
+
+      - name: 'install stunnel'
+        run: |
+          export PATH="$PATH:/c/Program Files (x86)/stunnel/bin
+          echo $PATH
+          stunnel
+        shell: bash
