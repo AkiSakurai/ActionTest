@@ -36,7 +36,7 @@ jobs:
           export PATH="$PATH:/c/Program Files (x86)/stunnel/bin"
           echo $PATH
           stunnel
-        shell: msys2 {0}
+        shell: bash
 
       - name: 'install stunnel'
         run: |
