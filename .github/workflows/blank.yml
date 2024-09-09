@@ -24,8 +24,17 @@ jobs:
     #     shell: msys2 {0}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: netsh trace start persistent=yes capture=yes tracefile=.\trace
+      - run: netsh trace start persistent=yes capture=yes tracefile=trace
         shell: bash
+      - run: curl https://www.google.com/
+        shell: bash
+      - run: netsh trace stop
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trace
+          path: trace
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: msys2/setup-msys2@ddf331adaebd714795f1042345e6ca57bd66cea8 # v2
       #   with:
