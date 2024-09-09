@@ -24,7 +24,7 @@ jobs:
     #     shell: msys2 {0}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: uname -m
+      - run: netsh trace start persistent=yes capture=yes tracefile=.\trace
         shell: bash
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: msys2/setup-msys2@ddf331adaebd714795f1042345e6ca57bd66cea8 # v2
