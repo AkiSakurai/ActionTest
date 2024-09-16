@@ -32,7 +32,8 @@ jobs:
         run: |
           ./RawCap.exe 127.0.0.1 cap.pcap &
           curl -v localhost
-          ls
+          taskkill /IM RawCap.exe 
+          
           cat cap.pcap
       - uses: actions/upload-artifact@v4
         with:
