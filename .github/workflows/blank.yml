@@ -33,7 +33,11 @@ jobs:
           ./RawCap.exe 127.0.0.1 cap.pcap &
           curl -v localhost
           ls
-          cap cap.pcap
+          cat cap.pcap
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cap.pcap
+          path: cap.pcap # or path/to/artifact
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: msys2/setup-msys2@ddf331adaebd714795f1042345e6ca57bd66cea8 # v2
