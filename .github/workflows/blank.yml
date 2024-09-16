@@ -31,7 +31,7 @@ jobs:
       - shell: bash
         run: |
           ./RawCap.exe 127.0.0.1 cap.pcap &
-          curl -v localhost
+          curl -v 127.0.0.1
           sleep 5
           
           cat cap.pcap
