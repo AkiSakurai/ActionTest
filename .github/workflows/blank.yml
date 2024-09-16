@@ -29,9 +29,12 @@ jobs:
 
       - run: ls
         shell: bash
-      - run: ./RawCap.exe --help
+      - run: ./RawCap.exe 127.0.0.1 cap.pcap &
         shell: bash
-
+      - run: curl -v localhost
+        shell: bash
+      - run: ls && cat cap.pcap 
+        shell: bash
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: msys2/setup-msys2@ddf331adaebd714795f1042345e6ca57bd66cea8 # v2
       #   with:
