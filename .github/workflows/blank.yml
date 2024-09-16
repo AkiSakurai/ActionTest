@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+
     # The type of runner that the job will run on
     runs-on: windows-latest
     # defaults:
@@ -24,9 +25,12 @@ jobs:
     #     shell: msys2 {0}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v4
+
+      - run: ls
+        shell: bash
       - run: RawCap.exe --help
         shell: bash
-
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: msys2/setup-msys2@ddf331adaebd714795f1042345e6ca57bd66cea8 # v2
