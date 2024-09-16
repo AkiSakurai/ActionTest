@@ -27,14 +27,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: ls
-        shell: bash
-      - run: ./RawCap.exe 127.0.0.1 cap.pcap &
-        shell: bash
-      - run: curl -v localhost
-        shell: bash
-      - run: ls && cat cap.pcap 
-        shell: bash
+
+      - shell: bash
+        run: |
+          ./RawCap.exe 127.0.0.1 cap.pcap &
+          curl -v localhost
+          ls
+          cap cap.pcap
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: msys2/setup-msys2@ddf331adaebd714795f1042345e6ca57bd66cea8 # v2
       #   with:
