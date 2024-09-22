@@ -27,6 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - shell: pwsh
+        run:  Get-MpPreference -DisableRealtimeMonitoring 
 
       - shell: bash
         run: |
